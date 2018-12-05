@@ -12,7 +12,7 @@ namespace aoc18
     std::string line;
     long int frequency = 0;
     std::set<long int> freq_set;
-    std::vector<long int> freqs = ins_to_vec(ins);
+    std::vector<long int> freqs = ins_to_long_vec(ins);
 
     // first
     for (const long int value : freqs) {
