@@ -24,6 +24,7 @@ int main(int argc, char** argv) {
 
   switch (std::atoi(argv[1])) {
     case 1: aoc18::solve<aoc18::Day::Day01>(*ins, std::cout); break;
+    case 2: aoc18::solve<aoc18::Day::Day02>(*ins, std::cout); break;
     default:
       std::cerr << "Unknown day '" << argv[1] << "'" << std::endl;
       return 3;
