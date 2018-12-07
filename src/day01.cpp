@@ -7,31 +7,33 @@
 namespace aoc18
 {
   template<>
-  void solve<Day::Day01>(std::istream& ins, std::ostream& outs)
+  bool solve<Day::Day01>(std::istream& ins, Solution* solution)
   {
     std::string line;
     long int frequency = 0;
     std::set<long int> freq_set;
-    std::vector<long int> freqs = ins_to_long_vec(ins);
+    auto freqs = get_input_vec<long int>(ins);
 
     // first
-    for (const long int value : freqs) {
+    for (const auto& value : freqs) {
       frequency += value;
     }
 
-    outs << "first: " << frequency << std::endl;
+    solution->first = std::to_string(frequency);
 
     // second
     frequency = 0;
     while (true) {
-      for (const long int value : freqs) {
+      for (const auto& value : freqs) {
         frequency += value;
         if (freq_set.find(frequency) != freq_set.end()) {
-          outs << "second: " << frequency << std::endl;
-          return;
+          solution->second = std::to_string(frequency);
+          return true;
         }
         freq_set.insert(frequency);
       }
     }
+
+    return false;
   }
 }

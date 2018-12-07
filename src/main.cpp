@@ -22,12 +22,17 @@ int main(int argc, char** argv) {
     ins = &std::cin;
   }
 
+  aoc18::Solution solution;
   switch (std::atoi(argv[1])) {
-    case 1: aoc18::solve<aoc18::Day::Day01>(*ins, std::cout); break;
-    case 2: aoc18::solve<aoc18::Day::Day02>(*ins, std::cout); break;
+    case 1: aoc18::solve<aoc18::Day::Day01>(*ins, &solution); break;
+    case 2: aoc18::solve<aoc18::Day::Day02>(*ins, &solution); break;
+    case 3: aoc18::solve<aoc18::Day::Day03>(*ins, &solution); break;
     default:
       std::cerr << "Unknown day '" << argv[1] << "'" << std::endl;
       return 3;
   }
+
+  std::cout << "first : " << solution.first << std::endl
+            << "second: " << solution.second << std::endl;
 }
 

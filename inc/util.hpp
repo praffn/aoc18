@@ -7,7 +7,14 @@
 namespace aoc18
 {
 
-std::vector<long int> ins_to_long_vec(std::istream& ins);
-std::vector<std::string> ins_to_str_vec(std::istream& ins);
+template<class T>
+std::vector<T> get_input_vec(std::istream& ins)
+{
+  std::vector<T> v;
+  for (T value; ins >> value;) {
+    v.push_back(value);
+  }
+  return v;
+}
 
 } // namespace aoc18

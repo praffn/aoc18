@@ -27,10 +27,10 @@ static int first(const std::vector<std::string>& ids) {
   int threes = 0;
 
   // loop trough all ids
-  for (const std::string id : ids) {
+  for (const auto& id : ids) {
     // make mapping for each character and their respective counts
     std::map<char, int> char_count;
-    for (const char c : id) {
+    for (const auto c : id) {
       const int value = char_count[c] + 1;
       char_count[c] = value;
     }
@@ -64,10 +64,11 @@ static std::string second(const std::vector<std::string>& ids) {
 }
 
 template<>
-void solve<Day::Day02>(std::istream& ins, std::ostream& outs) {
-  const std::vector<std::string> ids = ins_to_str_vec(ins);
-  outs << "first: " << first(ids) << std::endl;
-  outs << "second: " << second(ids) << std::endl;
+bool solve<Day::Day02>(std::istream& ins, Solution* solution) {
+  const auto ids = get_input_vec<std::string>(ins);
+  solution->first = std::to_string(first(ids));
+  solution->second = second(ids);
+  return true;
 }
 
 }

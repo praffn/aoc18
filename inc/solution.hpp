@@ -16,9 +16,15 @@ enum Day
   Day21, Day22, Day23, Day24, Day25,
 };
 
+struct Solution
+{
+  std::string first;
+  std::string second;
+};
+
 std::string day_to_string(Day d);
 
 template<Day D>
-void solve(std::istream& ins, std::ostream& outs);
+bool solve(std::istream& ins, Solution* solution);
 
 } //namespace aoc18
