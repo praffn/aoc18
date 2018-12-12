@@ -1,27 +1,32 @@
-##################################
-#                                #
-#   ADVENT OF CODE 2018 :: C++   #
-#                                #
-##################################
+# Advent of Code | C++
+
+To compile just run `make`.
+
+## Usage
+
+```
+aoc18 [-b] [-i filename] day
+```
+
+###Flags
+* `-b` Toggles benchmarking. Final result will include running time
+* `-i` Solutions will read given input file
+* `day` An integer in the range 1-25
+
+If no input file is given, the executable will default to reading stdin.
+
+### Examples
+
+* `aoc18 -bi inputs/input_3.txt 3`<br>
+  will run day 3 with input file `inputs/input_3.txt`. will also run benchmarking.
 
 
-## COMPILING:
-Run make, it will output a binary 'aoc18' in the root directory
-
-## RUNNING
-Run the built binary, providing it the day to run. The runner defaults
-to reading from stdin. You can supply a file to use after the day number
-
-  Example:
-
-  aoc18 12 inputs/input_1.txt
-
-
-
-
+* `aoc18 4 < inputs/input_4.txt`<br>
+  will run 4 day from stdin (which is the contents of `inputs/input_4.txt`)
+  
 ## LICENSE
 
-Copyright 2018 Phillip Raffnsøe
+Copyright &copy; 2018 Phillip Raffnsøe
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
