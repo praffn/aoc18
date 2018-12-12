@@ -77,6 +77,7 @@ void run_day(std::istream& ins, int day, bool benchmark) {
   case 02: solver = aoc18::solve<aoc18::Day::Day02>; break;
   case 03: solver = aoc18::solve<aoc18::Day::Day03>; break;
   case 04: solver = aoc18::solve<aoc18::Day::Day04>; break;
+  case 05: solver = aoc18::solve<aoc18::Day::Day05>; break;
   default:
     std::cerr << "day " << day << "is not yet implemented" << std::endl;
     return;
